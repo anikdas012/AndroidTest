@@ -1,3 +1,3 @@
-Fieldbuzz Android Developer test
+guruKlub Android Developer test
 =====================================================
 This repository contains all the code of the test.
