@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import tk.anikdas.anikdas012.androidtestguruklub.databinding.FragmentListBinding
+import tk.anikdas.anikdas012.androidtestguruklub.viewmodel.ListViewModel
 
 /**
  * Created by "Anik Das" on 30-Dec-2020
@@ -17,6 +18,7 @@ class ListFragment: Fragment() {
 
     private val TAG = "ListFragment"
     private lateinit var binding: FragmentListBinding
+    private lateinit var viewModel: ListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
