@@ -1,5 +1,6 @@
 package tk.anikdas.anikdas012.androidtestguruklub.ui
 
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import tk.anikdas.anikdas012.androidtestguruklub.R
 import tk.anikdas.anikdas012.androidtestguruklub.model.ListModel
 
@@ -19,16 +21,25 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     private val TAG = "ListAdapter"
     private var items: List<ListModel> = ArrayList()
+    private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         Log.d(TAG, "onCreateViewHolder: called")
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.recycler_item, parent, false)
+        context = parent.context
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        Log.d(TAG, "onBindViewHolder: called")
+        Glide.with(context)
+                .load(items[position].image.medium)
+                .centerCrop()
+                .into(holder.image)
+        holder.name.text = items[position].name
+        holder.language.text = items[position].language
+        holder.gener.text = items[position].genres.toString()
     }
 
     override fun getItemCount() = items.size
