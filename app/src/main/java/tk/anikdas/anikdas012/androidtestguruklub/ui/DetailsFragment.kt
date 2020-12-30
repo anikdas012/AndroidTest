@@ -40,5 +40,10 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.d(TAG, "onViewCreated: called")
         viewModel = ViewModelProvider(this)[DetailsViewModel::class.java]
+        subscribeObserver()
+    }
+
+    private fun subscribeObserver() {
+        TODO("Not yet implemented")
     }
 }
