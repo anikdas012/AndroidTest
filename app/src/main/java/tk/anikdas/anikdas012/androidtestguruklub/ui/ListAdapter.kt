@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import tk.anikdas.anikdas012.androidtestguruklub.R
+import tk.anikdas.anikdas012.androidtestguruklub.model.ListModel
 
 /**
  * Created by "Anik Das" on 30-Dec-2020
@@ -15,6 +16,7 @@ import tk.anikdas.anikdas012.androidtestguruklub.R
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     private val TAG = "ListAdapter"
+    private var items: List<ListModel> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         TODO("Not yet implemented")
