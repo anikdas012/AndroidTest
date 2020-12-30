@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AndroidTestGuruKlub</string>
     <string name="tv_shows">TV Shows</string>
+    <string name="name">Name</string>
+    <string name="language">Language</string>
+    <string name="genere">Genere</string>
 </resources>
