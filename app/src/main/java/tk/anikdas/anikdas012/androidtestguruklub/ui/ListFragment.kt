@@ -70,5 +70,15 @@ class ListFragment: Fragment(), ItemClickListener {
     }
 
     override fun onItemClick(id: Int) {
+        Log.d(TAG, "onItemClick: called")
+        val argument = Bundle()
+        argument.putInt("id", id)
+
+        val detailsFragment = DetailsFragment()
+        detailsFragment.arguments = argument
+
+        activity!!.supportFragmentManager.beginTransaction()
+            .replace(R.id.place_holder, detailsFragment, "Details_Fragment")
+            .commit()
     }
 }
