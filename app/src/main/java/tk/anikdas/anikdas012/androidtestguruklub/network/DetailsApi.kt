@@ -12,6 +12,6 @@ import tk.anikdas.anikdas012.androidtestguruklub.model.DetailsModel
 
 interface DetailsApi {
 
-    @GET("/{id}")
+    @GET("/shows/{id}")
     fun details(@Path("id") id: Int): Flowable<DetailsModel>
 }
