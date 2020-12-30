@@ -4,4 +4,10 @@
     <string name="name">Name</string>
     <string name="language">Language</string>
     <string name="genere">Genere</string>
+    <string name="movie_name">Movie Name</string>
+    <string name="details_name">Name:</string>
+    <string name="details_type">Type:</string>
+    <string name="details_language">Language:</string>
+    <string name="details_genere">Genere:</string>
+    <string name="details_summary">Summary:</string>
 </resources>
