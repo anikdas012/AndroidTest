@@ -80,6 +80,7 @@ class ListFragment: Fragment(), ItemClickListener {
 
         activity!!.supportFragmentManager.beginTransaction()
             .replace(R.id.place_holder, detailsFragment, "Details_Fragment")
+            .addToBackStack("List_Fragment")
             .commit()
     }
 }
