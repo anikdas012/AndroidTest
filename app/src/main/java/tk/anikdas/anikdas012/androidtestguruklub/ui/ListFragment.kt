@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import tk.anikdas.anikdas012.androidtestguruklub.databinding.FragmentListBinding
 import tk.anikdas.anikdas012.androidtestguruklub.viewmodel.ListViewModel
 
@@ -33,6 +34,6 @@ class ListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+        viewModel = ViewModelProvider(this)[ListViewModel::class.java]
     }
 }
