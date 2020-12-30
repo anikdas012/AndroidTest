@@ -73,6 +73,7 @@ class ListFragment: Fragment(), ItemClickListener {
         Log.d(TAG, "onItemClick: called")
         val argument = Bundle()
         argument.putInt("id", id)
+        argument.putString("name", name)
 
         val detailsFragment = DetailsFragment()
         detailsFragment.arguments = argument
