@@ -33,4 +33,8 @@ class DetailsFragment : Fragment() {
         binding.title.text = movieName
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.d(TAG, "onViewCreated: called")
+    }
 }
