@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import tk.anikdas.anikdas012.androidtestguruklub.databinding.FragmentListBinding
 import tk.anikdas.anikdas012.androidtestguruklub.viewmodel.ListViewModel
 
@@ -20,6 +22,7 @@ class ListFragment: Fragment() {
     private val TAG = "ListFragment"
     private lateinit var binding: FragmentListBinding
     private lateinit var viewModel: ListViewModel
+    private lateinit var adapter: ListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,6 +38,7 @@ class ListFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[ListViewModel::class.java]
+        adapter = ListAdapter()
         initRecyclerView()
         subscribeObservers()
     }
@@ -44,6 +48,8 @@ class ListFragment: Fragment() {
     }
 
     private fun initRecyclerView() {
-        TODO("Not yet implemented")
+        Log.d(TAG, "initRecyclerView: called")
+        binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+        binding.recyclerView.adapter = adapter
     }
 }
