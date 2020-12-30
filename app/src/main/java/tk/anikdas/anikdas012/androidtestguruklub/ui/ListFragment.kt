@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,7 +45,18 @@ class ListFragment: Fragment() {
     }
 
     private fun subscribeObservers() {
-        TODO("Not yet implemented")
+        Log.d(TAG, "subscribeObservers: called")
+        viewModel.getList().removeObservers(viewLifecycleOwner)
+        viewModel.getList().observe(viewLifecycleOwner, Observer { items ->
+            if (items != null) {
+                if (items[0].id == -1) {
+                    Log.e(TAG, "subscribeObservers: Error loading items",)
+                } else {
+                    Log.d(TAG, "subscribeObservers: success")
+                    adapter.setItems(items)
+                }
+            }
+        })
     }
 
     private fun initRecyclerView() {
