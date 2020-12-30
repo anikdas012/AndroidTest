@@ -35,5 +35,15 @@ class ListFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[ListViewModel::class.java]
+        initRecyclerView()
+        subscribeObservers()
+    }
+
+    private fun subscribeObservers() {
+        TODO("Not yet implemented")
+    }
+
+    private fun initRecyclerView() {
+        TODO("Not yet implemented")
     }
 }
