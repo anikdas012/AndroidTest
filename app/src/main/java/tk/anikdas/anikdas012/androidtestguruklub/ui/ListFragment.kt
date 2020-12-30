@@ -11,7 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import tk.anikdas.anikdas012.androidtestguruklub.R
 import tk.anikdas.anikdas012.androidtestguruklub.databinding.FragmentListBinding
+import tk.anikdas.anikdas012.androidtestguruklub.utils.ItemClickListener
 import tk.anikdas.anikdas012.androidtestguruklub.viewmodel.ListViewModel
 
 /**
@@ -19,7 +21,7 @@ import tk.anikdas.anikdas012.androidtestguruklub.viewmodel.ListViewModel
  * Developer email: "anikdas012@gmail.com"
  */
 
-class ListFragment: Fragment() {
+class ListFragment: Fragment(), ItemClickListener {
 
     private val TAG = "ListFragment"
     private lateinit var binding: FragmentListBinding
@@ -40,7 +42,7 @@ class ListFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[ListViewModel::class.java]
-        adapter = ListAdapter()
+        adapter = ListAdapter(this)
         initRecyclerView()
         subscribeObservers()
     }
@@ -65,5 +67,8 @@ class ListFragment: Fragment() {
         Log.d(TAG, "initRecyclerView: called")
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         binding.recyclerView.adapter = adapter
+    }
+
+    override fun onItemClick(id: Int) {
     }
 }
