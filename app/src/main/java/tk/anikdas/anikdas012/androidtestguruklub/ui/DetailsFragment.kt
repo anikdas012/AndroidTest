@@ -30,6 +30,7 @@ class DetailsFragment : Fragment() {
         binding = FragmentDetailsBinding.inflate(inflater, container, false)
         id = arguments!!.getInt("id")
         movieName = arguments!!.getString("name")
+        binding.title.text = movieName
         return binding.root
     }
 }
