@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -50,7 +51,8 @@ class ListFragment: Fragment() {
         viewModel.getList().observe(viewLifecycleOwner, Observer { items ->
             if (items != null) {
                 if (items[0].id == -1) {
-                    Log.e(TAG, "subscribeObservers: Error loading items",)
+                    Log.e(TAG, "subscribeObservers: Error loading items")
+                    Toast.makeText(context, "Data loading error", Toast.LENGTH_LONG).show()
                 } else {
                     Log.d(TAG, "subscribeObservers: success")
                     adapter.setItems(items)
