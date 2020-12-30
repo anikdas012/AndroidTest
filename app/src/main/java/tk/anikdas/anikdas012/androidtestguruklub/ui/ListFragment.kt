@@ -69,7 +69,7 @@ class ListFragment: Fragment(), ItemClickListener {
         binding.recyclerView.adapter = adapter
     }
 
-    override fun onItemClick(id: Int) {
+    override fun onItemClick(id: Int, name: String) {
         Log.d(TAG, "onItemClick: called")
         val argument = Bundle()
         argument.putInt("id", id)

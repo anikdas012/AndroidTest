@@ -6,5 +6,5 @@ package tk.anikdas.anikdas012.androidtestguruklub.utils
  */
 
 interface ItemClickListener {
-    fun onItemClick(id: Int)
+    fun onItemClick(id: Int, name: String)
 }
