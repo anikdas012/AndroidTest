@@ -31,9 +31,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
         TODO("Not yet implemented")
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = items.size
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var image: AppCompatImageView = itemView.findViewById(R.id.image)
