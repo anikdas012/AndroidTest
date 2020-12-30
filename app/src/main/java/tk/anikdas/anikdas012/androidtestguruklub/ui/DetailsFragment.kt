@@ -45,7 +45,14 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.d(TAG, "onViewCreated: called")
         viewModel = ViewModelProvider(this)[DetailsViewModel::class.java]
+        binding.back.setOnClickListener {
+            returnToListView()
+        }
         subscribeObserver()
+    }
+
+    private fun returnToListView() {
+        TODO("Not yet implemented")
     }
 
     private fun subscribeObserver() {
