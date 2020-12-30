@@ -1,12 +1,17 @@
 package tk.anikdas.anikdas012.androidtestguruklub.ui
 
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import tk.anikdas.anikdas012.androidtestguruklub.databinding.FragmentDetailsBinding
 import tk.anikdas.anikdas012.androidtestguruklub.viewmodel.DetailsViewModel
 
@@ -44,6 +49,26 @@ class DetailsFragment : Fragment() {
     }
 
     private fun subscribeObserver() {
-        TODO("Not yet implemented")
+        Log.d(TAG, "subscribeObserver: called")
+        viewModel.getDetails(id!!).removeObservers(viewLifecycleOwner)
+        viewModel.getDetails(id!!).observe(viewLifecycleOwner, Observer { details ->
+            if (details.type != "Error") {
+                Glide.with(this)
+                    .load(details.image.original)
+                    .centerInside()
+                    .into(binding.image)
+                binding.name.text = details.name
+                binding.type.text = details.type
+                binding.language.text = details.language
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    binding.summary.text = Html.fromHtml(details.summary, Html.FROM_HTML_MODE_COMPACT)
+                } else {
+                    binding.summary.text = Html.fromHtml(details.summary)
+                }
+                binding.genere.text = details.genres.toString()
+            } else {
+                Toast.makeText(context, "Loading error", Toast.LENGTH_LONG).show()
+            }
+        })
     }
 }
