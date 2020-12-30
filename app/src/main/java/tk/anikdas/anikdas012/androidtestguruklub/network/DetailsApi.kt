@@ -3,6 +3,7 @@ package tk.anikdas.anikdas012.androidtestguruklub.network
 import io.reactivex.Flowable
 import retrofit2.http.GET
 import retrofit2.http.Path
+import tk.anikdas.anikdas012.androidtestguruklub.model.DetailsModel
 
 /**
  * Created by "Anik Das" on 30-Dec-2020
@@ -12,5 +13,5 @@ import retrofit2.http.Path
 interface DetailsApi {
 
     @GET("/{id}")
-    fun details(@Path("id") id: Int): Flowable<DetailsApi>
+    fun details(@Path("id") id: Int): Flowable<DetailsModel>
 }
