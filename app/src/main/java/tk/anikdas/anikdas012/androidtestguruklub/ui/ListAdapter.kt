@@ -37,7 +37,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
         Log.d(TAG, "onBindViewHolder: called")
         Glide.with(context)
                 .load(items[position].image.medium)
-                .centerCrop()
+                .centerInside()
                 .into(holder.image)
         holder.name.text = items[position].name
         holder.language.text = items[position].language
