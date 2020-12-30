@@ -47,6 +47,12 @@ class ListAdapter(val itemClickListener: ItemClickListener) : RecyclerView.Adapt
         holder.clear.setOnClickListener {
             removeItem(position)
         }
+
+        holder.item.setOnClickListener {
+            if (items[position].id != -1) {
+                itemClickListener.onItemClick(items[position].id)
+            }
+        }
     }
 
     private fun removeItem(position: Int) {
