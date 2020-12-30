@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import tk.anikdas.anikdas012.androidtestguruklub.databinding.FragmentDetailsBinding
+import tk.anikdas.anikdas012.androidtestguruklub.viewmodel.DetailsViewModel
 
 /**
  * Created by "Anik Das" on 30-Dec-2020
@@ -17,6 +19,7 @@ class DetailsFragment : Fragment() {
 
     private val TAG = "DetailsFragment"
     private lateinit var binding: FragmentDetailsBinding
+    private lateinit var viewModel: DetailsViewModel
     private var id: Int? = null
     private var movieName: String? = null
 
@@ -36,5 +39,6 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.d(TAG, "onViewCreated: called")
+        viewModel = ViewModelProvider(this)[DetailsViewModel::class.java]
     }
 }
