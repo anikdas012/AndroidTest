@@ -14,6 +14,8 @@ import tk.anikdas.anikdas012.androidtestguruklub.R
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
+    private val TAG = "ListAdapter"
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         TODO("Not yet implemented")
     }
