@@ -1,5 +1,7 @@
 package tk.anikdas.anikdas012.androidtestguruklub.ui
 
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
@@ -19,7 +21,10 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
     private var items: List<ListModel> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        Log.d(TAG, "onCreateViewHolder: called")
+        val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.recycler_item, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
