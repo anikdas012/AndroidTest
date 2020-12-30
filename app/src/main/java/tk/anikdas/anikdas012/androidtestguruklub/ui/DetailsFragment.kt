@@ -17,6 +17,8 @@ class DetailsFragment : Fragment() {
 
     private val TAG = "DetailsFragment"
     private lateinit var binding: FragmentDetailsBinding
+    private var id: Int? = null
+    private var movieName: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,6 +28,8 @@ class DetailsFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         Log.d(TAG, "onCreateView: called")
         binding = FragmentDetailsBinding.inflate(inflater, container, false)
+        id = arguments!!.getInt("id")
+        movieName = arguments!!.getString("name")
         return binding.root
     }
 }
