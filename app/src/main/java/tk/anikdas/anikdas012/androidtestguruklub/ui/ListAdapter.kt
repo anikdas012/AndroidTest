@@ -1,7 +1,6 @@
 package tk.anikdas.anikdas012.androidtestguruklub.ui
 
 import android.content.Context
-import android.content.DialogInterface
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,13 +13,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import tk.anikdas.anikdas012.androidtestguruklub.R
 import tk.anikdas.anikdas012.androidtestguruklub.model.ListModel
+import tk.anikdas.anikdas012.androidtestguruklub.utils.ItemClickListener
 
 /**
  * Created by "Anik Das" on 30-Dec-2020
  * Developer email: "anikdas012@gmail.com"
  */
 
-class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListAdapter(val itemClickListener: ItemClickListener) : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     private val TAG = "ListAdapter"
     private var items: MutableList<ListModel> = ArrayList()
