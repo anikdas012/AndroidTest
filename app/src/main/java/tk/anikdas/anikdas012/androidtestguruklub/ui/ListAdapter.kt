@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import tk.anikdas.anikdas012.androidtestguruklub.R
@@ -76,5 +77,6 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
         var language: AppCompatTextView = itemView.findViewById(R.id.language)
         var gener: AppCompatTextView = itemView.findViewById(R.id.genere)
         var clear: AppCompatImageView = itemView.findViewById(R.id.clear)
+        var item: CardView = itemView.findViewById(R.id.item)
     }
 }
