@@ -24,5 +24,9 @@ class RetrofitServiece {
             }
             return retrofit!!
         }
+
+        fun getListApi() = getRetrofitInstance().create(Listapi::class.java)
+
+        fun getDetailsApi() = getRetrofitInstance().create(DetailsApi::class.java)
     }
 }
