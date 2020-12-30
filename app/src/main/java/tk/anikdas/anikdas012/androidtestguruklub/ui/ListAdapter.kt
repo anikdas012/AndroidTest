@@ -22,7 +22,7 @@ import tk.anikdas.anikdas012.androidtestguruklub.model.ListModel
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     private val TAG = "ListAdapter"
-    private var items: List<ListModel> = ArrayList()
+    private var items: MutableList<ListModel> = ArrayList()
     private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -54,7 +54,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
                 .setTitle("Delete entry")
                 .setMessage("Do you really want to remove the entry from list")
                 .setPositiveButton(android.R.string.yes) { dialog, which ->
-                    items.drop(position)
+                    items.removeAt(position)
                     notifyDataSetChanged()
                 }
                 .setNegativeButton(android.R.string.no, null)
@@ -64,7 +64,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     fun setItems(items: List<ListModel>) {
         Log.d(TAG, "setPosts: called")
-        this.items = items
+        this.items = items.toMutableList()
         notifyDataSetChanged()
     }
 
