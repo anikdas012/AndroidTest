@@ -1,6 +1,7 @@
 package tk.anikdas.anikdas012.androidtestguruklub.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,7 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
+        Log.d(TAG, "onCreateView: called")
         binding = FragmentDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
