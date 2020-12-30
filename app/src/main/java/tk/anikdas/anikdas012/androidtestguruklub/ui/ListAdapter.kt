@@ -62,6 +62,12 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
                 .show()
     }
 
+    fun setItems(items: List<ListModel>) {
+        Log.d(TAG, "setPosts: called")
+        this.items = items
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount() = items.size
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
