@@ -1,5 +1,9 @@
 package tk.anikdas.anikdas012.androidtestguruklub.ui
 
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
 /**
@@ -8,4 +12,14 @@ import androidx.fragment.app.Fragment
  */
 
 class DetailsFragment : Fragment() {
+
+    private val TAG = "DetailsFragment"
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
 }
