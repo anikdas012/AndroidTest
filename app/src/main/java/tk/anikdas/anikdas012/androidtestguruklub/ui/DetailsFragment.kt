@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import tk.anikdas.anikdas012.androidtestguruklub.R
 import tk.anikdas.anikdas012.androidtestguruklub.databinding.FragmentDetailsBinding
 import tk.anikdas.anikdas012.androidtestguruklub.viewmodel.DetailsViewModel
 
@@ -52,7 +53,10 @@ class DetailsFragment : Fragment() {
     }
 
     private fun returnToListView() {
-        TODO("Not yet implemented")
+        Log.d(TAG, "returnToListView: called")
+        activity!!.supportFragmentManager.beginTransaction()
+            .replace(R.id.place_holder, ListFragment(), "List_Fragment")
+            .commit()
     }
 
     private fun subscribeObserver() {
